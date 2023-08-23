@@ -15,13 +15,15 @@ return new class extends Migration {
         Schema::create('service_leads', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('product_id')->nullable()->default(0);
+            $table->bigInteger('city_id')->nullable()->default(0);
+            $table->bigInteger('state_id')->nullable()->default(0);
             $table->string('product_code')->nullable();
             $table->string('invoice')->nullable();
-            $table->longText('user_address')->nullable();
-            $table->string('user_name')->nullable();
+            $table->string('name')->nullable();
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();
-            $table->date('date')->nullable();
+            $table->string('zipcode')->nullable();
+            $table->longText('address')->nullable();
             $table->enum('status', ['NEW', 'VISITED', 'SOLVED', 'CANCELLED'])->nullable()->default('NEW');
             $table->timestamps();
             $table->softDeletes();
