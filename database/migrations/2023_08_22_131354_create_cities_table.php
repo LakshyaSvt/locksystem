@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('state_id')->unsigned();
             $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
-            $table->string('city_id')->nullable();
             $table->string('city_name')->nullable();
             $table->timestamps();
             $table->softDeletes();

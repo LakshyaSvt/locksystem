@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('service_leads', function (Blueprint $table) {
             $table->id();
-            $table->string('product_name')->nullable();
+            $table->bigIncrements('product_id')->nullable()->default(0);
             $table->string('product_code')->nullable();
             $table->string('invoice')->nullable();
             $table->longText('user_address')->nullable();
