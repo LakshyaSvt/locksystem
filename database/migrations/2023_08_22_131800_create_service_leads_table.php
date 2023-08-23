@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -15,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('service_leads', function (Blueprint $table) {
             $table->id();
-            $table->bigIncrements('product_id')->nullable()->default(0);
+            $table->bigInteger('product_id')->nullable()->default(0);
             $table->string('product_code')->nullable();
             $table->string('invoice')->nullable();
             $table->longText('user_address')->nullable();
@@ -23,7 +22,7 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();
             $table->date('date')->nullable();
-            $table->enum('status',['NEW','PURCHASED','CANCELLED'])->nullable()->default('NEW');
+            $table->enum('status', ['NEW', 'VISITED', 'SOLVED', 'CANCELLED'])->nullable()->default('NEW');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('purchase_leads', function (Blueprint $table) {
             $table->id();
-            $table->bigIncrements('product_id')->nullable()->default(0);
+            $table->bigInteger('product_id')->nullable()->default(0);
             $table->decimal('price',10,2)->nullable()->default(0);
             $table->string('user_name')->nullable();
             $table->string('email')->nullable();
