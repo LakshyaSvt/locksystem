@@ -60,7 +60,7 @@
             <div style="display: none" id="add_more_conatiner">
                 <div class="mb-3">
                     <label for="name" class="form-label">Product</label>
-                    <select name="add_more_product_name" class="form-control" id="product_name" required>
+                    <select name="add_more_product_name" class="form-control" id="product_name">
                         <option value="">Select Product</option>
                         @foreach ($products as $product)
                             <option value="{{ $product->product_name }}">{{ $product->product_name }}</option>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Quantity For Product</label>
-                    <select name="add_more_quantity" id="quantity" required>
+                    <select name="add_more_quantity" id="quantity">
                         <option value="">Select quantity</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
