@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index']);
 
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+// Route::get('/check',function(){
+//     $val = '[{"product_name":"Product 2","qty":2},{"product_name":"Product 3","qty":3}]';
+//     dd(json_decode($val));
+// });
