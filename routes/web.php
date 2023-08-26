@@ -15,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::post('/purchase-lead', [IndexController::class, 'purchaseLeadEnquiry'])->name('purchase-lead-enquiry');
+
+Route::get('/service',[IndexController::class, 'service']);
+Route::post('/service-lead', [IndexController::class, 'serviceLeadEnquiry'])->name('service-lead-enquiry');
 
 
-Route::group(['prefix' => 'admin'], function () {
+
+Route::group(['prefix' => 'panel'], function () {
     Voyager::routes();
 });
 

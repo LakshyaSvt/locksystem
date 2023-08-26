@@ -1,8 +1,8 @@
-@extends('layouts.master', ['title' => 'Product Lead'])
+@extends('layouts.master', ['title' => 'Service Lead'])
 @section('content')
     <div class="w-auto">
-        <h1>Purchase Request Form</h1>
-        <form action="{{ route('purchase-lead-enquiry') }}" method="POST">
+        <h1>Service Request Form</h1>
+        <form action="{{ route('service-lead-enquiry') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name *</label>
@@ -33,51 +33,16 @@
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Product Name *</label>
-                <select name="product_name" class="form-control" id="product_name" required>
+                <select name="product_id" class="form-control" id="product_name" required>
                     <option value="">Select Product</option>
                     @foreach ($products as $product)
-                        <option value="{{ $product->product_name }}">{{ $product->product_name }}</option>
+                        <option value="{{ $product->id }}">{{ $product->product_name }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="mb-3">
-                <label for="quantity" class="form-label">Quantity *</label>
-                <select name="quantity" id="quantity" required>
-                    <option value="">Select quantity</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="1" id="add_more">
-                <label class="form-check-label" for="add_more">
-                    Add more product
-                </label>
-            </div>
-            <div style="display: none" id="add_more_conatiner">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Product</label>
-                    <select name="add_more_product_name" class="form-control" id="product_name" required>
-                        <option value="">Select Product</option>
-                        @foreach ($products as $product)
-                            <option value="{{ $product->product_name }}">{{ $product->product_name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="quantity" class="form-label">Quantity For Product</label>
-                    <select name="add_more_quantity" id="quantity" required>
-                        <option value="">Select quantity</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
+                <label for="invoice" class="form-label">Invoice *</label>
+                <input type="file" name="invoice" class="form-control" id="invoice" required>
             </div>
             <div class="mb-3">
                 <label for="zipcode" class="form-label">Zip/Postal Code *</label>
@@ -86,10 +51,6 @@
             <div class="mb-3">
                 <label for="address" class="form-label">Address *</label>
                 <input type="text" name="address" class="form-control" id="address" required>
-            </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">Price *</label>
-                <input type="number" name="price" class="form-control" id="price" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -123,14 +84,6 @@
                     }
                 });
             });
-
-            $('#add_more').on('change', function() {
-                if ($(this).is(':checked')) {
-                    $('#add_more_conatiner').show();
-                } else {
-                    $('#add_more_conatiner').hide();
-                }
-            })
         });
     </script>
 @endsection
