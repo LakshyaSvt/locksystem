@@ -41,7 +41,7 @@ class IndexController extends Controller
         $purchase->mobile = request()->mobile;
         $purchase->state_id = request()->state;
         $purchase->city_id = request()->city;
-        $purchase->price = request()->price;
+        // $purchase->price = request()->price;
         $purchase->zipcode = request()->zipcode;
         $purchase->address = request()->address;
 

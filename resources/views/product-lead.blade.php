@@ -1,7 +1,7 @@
 @extends('layouts.master', ['title' => 'Product Lead'])
 @section('content')
     <div class="w-auto">
-        <h1>Purchase Request Form</h1>
+        <h1>Installation Request Form</h1>
         <form action="{{ route('purchase-lead-enquiry') }}" method="POST">
             @csrf
             <div class="mb-3">
@@ -16,20 +16,36 @@
                 <label for="mobile" class="form-label">Mobile *</label>
                 <input type="number" class="form-control" name="mobile" id="mobile" required>
             </div>
-            <div class="mb-3">
-                <label for="state" class="form-label">State *</label>
-                <select name="state" id="state" required>
-                    <option value="">Select State</option>
-                    @foreach ($states as $state)
-                        <option value="{{ $state->id }}">{{ $state->state_name }}</option>
-                    @endforeach
-                </select>
+            <div class="d-flex justify-content-start">
+                <div class="input-group input-group-sm mb-3 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">State *</span>
+                    </div>
+                    <select name="state" id="state" required>
+                        <option value="" disabled>Select State</option>
+                        @foreach ($states as $state)
+                            <option value="{{ $state->id }}">{{ $state->state_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="input-group input-group-sm mb-3 mx-4 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">City *</span>
+                    </div>
+                    <select name="city" id="city" required>
+                        <option value="">Select City</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-sm mb-3 mx-4 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Zip/Postal Code *</span>
+                    </div>
+                    <input type="number" name="zipcode" class="form-control" id="zipcode" required>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="city" class="form-label">City *</label>
-                <select name="city" id="city" required>
-                    <option value="">Select City</option>
-                </select>
+                <label for="address" class="form-label">Address *</label>
+                <textarea type="text" name="address" class="form-control" id="address" rows="2" required></textarea>
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Product Name *</label>
@@ -40,8 +56,10 @@
                     @endforeach
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="quantity" class="form-label">Quantity *</label>
+            <div class="input-group input-group-sm mb-3 w-auto">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Quantity *</span>
+                </div>
                 <select name="quantity" id="quantity" required>
                     <option value="">Select quantity</option>
                     <option value="1">1</option>
@@ -67,8 +85,10 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label for="quantity" class="form-label">Quantity For Product</label>
+                <div class="input-group input-group-sm mb-3 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Quantity For Product</span>
+                    </div>
                     <select name="add_more_quantity" id="quantity">
                         <option value="">Select quantity</option>
                         <option value="1">1</option>
@@ -79,18 +99,11 @@
                     </select>
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="zipcode" class="form-label">Zip/Postal Code *</label>
-                <input type="number" name="zipcode" class="form-control" id="zipcode" required>
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address *</label>
-                <input type="text" name="address" class="form-control" id="address" required>
-            </div>
-            <div class="mb-3">
+
+            {{-- <div class="mb-3">
                 <label for="price" class="form-label">Price *</label>
                 <input type="number" name="price" class="form-control" id="price" required>
-            </div>
+            </div> --}}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

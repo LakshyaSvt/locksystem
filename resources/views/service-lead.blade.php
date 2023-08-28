@@ -16,20 +16,36 @@
                 <label for="mobile" class="form-label">Mobile *</label>
                 <input type="number" class="form-control" name="mobile" id="mobile" required>
             </div>
-            <div class="mb-3">
-                <label for="state" class="form-label">State *</label>
-                <select name="state" id="state" required>
-                    <option value="">Select State</option>
-                    @foreach ($states as $state)
-                        <option value="{{ $state->id }}">{{ $state->state_name }}</option>
-                    @endforeach
-                </select>
+            <div class="d-flex justify-content-start">
+                <div class="input-group input-group-sm mb-3 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">State *</span>
+                    </div>
+                    <select name="state" id="state" required>
+                        <option value="" disabled>Select State</option>
+                        @foreach ($states as $state)
+                            <option value="{{ $state->id }}">{{ $state->state_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="input-group input-group-sm mb-3 mx-4 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">City *</span>
+                    </div>
+                    <select name="city" id="city" required>
+                        <option value="">Select City</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-sm mb-3 mx-4 w-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Zip/Postal Code *</span>
+                    </div>
+                    <input type="number" name="zipcode" class="form-control" id="zipcode" required>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="city" class="form-label">City *</label>
-                <select name="city" id="city" required>
-                    <option value="">Select City</option>
-                </select>
+                <label for="address" class="form-label">Address *</label>
+                <textarea type="text" name="address" class="form-control" id="address" rows="2" required></textarea>
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Product Name *</label>
@@ -43,14 +59,6 @@
             <div class="mb-3">
                 <label for="invoice" class="form-label">Invoice *</label>
                 <input type="file" name="invoice" class="form-control" id="invoice" required>
-            </div>
-            <div class="mb-3">
-                <label for="zipcode" class="form-label">Zip/Postal Code *</label>
-                <input type="number" name="zipcode" class="form-control" id="zipcode" required>
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address *</label>
-                <input type="text" name="address" class="form-control" id="address" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
