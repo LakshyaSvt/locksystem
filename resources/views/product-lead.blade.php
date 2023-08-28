@@ -100,11 +100,13 @@
                 </div>
             </div>
 
-            {{-- <div class="mb-3">
-                <label for="price" class="form-label">Price *</label>
-                <input type="number" name="price" class="form-control" id="price" required>
-            </div> --}}
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" id="temrs_condition">
+                <label class="form-check-label" for="temrs_condition">
+                    I agree to pay installation charges where applicable.
+                </label>
+            </div>
+            <button type="submit" id="submit-button" class="btn btn-primary" disabled>Submit</button>
         </form>
     </div>
 @endsection
@@ -144,6 +146,16 @@
                     $('#add_more_conatiner').hide();
                 }
             })
+        });
+    </script>
+    <script>
+        $('#temrs_condition').on('change', function() {
+            if ($(this).is(':checked')) {
+                $('#submit-button').removeAttr('disabled');
+            }
+            else{
+                $('#submit-button').attr('disabled', 'disabled');
+            }
         });
     </script>
 @endsection
