@@ -45,16 +45,20 @@ class IndexController extends Controller
         $purchase->zipcode = request()->zipcode;
         $purchase->address = request()->address;
 
-        $products = [];
+        $products = []; //all products
+
+        //1.
         $product = (object)[];
         $product->product_name = request()->product_name;
         $product->qty = request()->quantity;
         array_push($products, $product);
 
+        //2.
         if (isset(request()->add_more_product_name)) {
-            $product->product_name = request()->add_more_product_name;
-            $product->qty = request()->add_more_quantity;
-            array_push($products, $product);
+            $product2 = (object)[];
+            $product2->product_name = request()->add_more_product_name;
+            $product2->qty = request()->add_more_quantity;
+            array_push($products, $product2);
         }
 
         $purchase->products = json_encode($products);

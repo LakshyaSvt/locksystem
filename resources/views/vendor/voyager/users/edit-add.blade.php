@@ -41,7 +41,7 @@
 
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="employee_code">Employee Code</label>
+                                <label for="employee_code">Service Partner Code</label>
                                 <input type="text" class="form-control" id="employee_code" name="employee_code"
                                     placeholder="Employee Code"
                                     value="{{ old('employee_code', $dataTypeContent->employee_code ?? '') }}">

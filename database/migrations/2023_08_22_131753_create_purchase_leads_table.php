@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->decimal('price', 10, 2)->nullable()->default(0);
             $table->string('zipcode')->nullable();
             $table->longText('address')->nullable();
-            $table->enum('status', ['NEW', 'PURCHASED', 'CANCELLED'])->nullable()->default('NEW');
+            $table->enum('status', ['NEW', 'INSTALLED', 'CANCELLED'])->nullable()->default('NEW');
             $table->timestamps();
             $table->softDeletes();
         });
