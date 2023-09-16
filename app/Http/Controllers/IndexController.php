@@ -12,8 +12,12 @@ use Illuminate\Support\Facades\File;
 
 class IndexController extends Controller
 {
+    public function index(){
+        $products = Product::get();
+        return view('index',compact('products'));
+    }
 
-    public function index()
+    public function product()
     {
         $states = State::get();
         $products = Product::get();

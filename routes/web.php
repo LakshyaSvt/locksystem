@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[IndexController::class, 'index'])->name('index');
+Route::view('/about','about')->name('about');
+Route::view('/products','products')->name('products');
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/product', [IndexController::class, 'product'])->name('product');
 Route::post('/purchase-lead', [IndexController::class, 'purchaseLeadEnquiry'])->name('purchase-lead-enquiry');
 
-Route::get('/service',[IndexController::class, 'service']);
+Route::get('/service',[IndexController::class, 'service'])->name('service');
 Route::post('/service-lead', [IndexController::class, 'serviceLeadEnquiry'])->name('service-lead-enquiry');
 
 
@@ -25,8 +28,3 @@ Route::post('/service-lead', [IndexController::class, 'serviceLeadEnquiry'])->na
 Route::group(['prefix' => 'panel'], function () {
     Voyager::routes();
 });
-
-// Route::get('/check',function(){
-//     $val = '[{"product_name":"Product 2","qty":2},{"product_name":"Product 3","qty":3}]';
-//     dd(json_decode($val));
-// });
