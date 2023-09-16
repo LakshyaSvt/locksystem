@@ -15,7 +15,7 @@
                 <!--start product carousel-->
                 <div class="product-wrap pt-4">
                     <div class="row justify-content-center">
-                        @foreach (App\Modles\Product::get() as $product)
+                        @foreach (App\Models\Product::get() as $product)
                             <div class="col-md-4">
                                 <div class="single-product rounded shadow-sm white-bg">
                                     <img src="{{ Voyager::image($product->image) }}" class="img-fluid p-4"
