@@ -15,30 +15,24 @@
                 <!--start product carousel-->
                 <div class="product-wrap pt-4">
                     <div class="row justify-content-center">
-                        <div class="col-md-4">
-                            <div class="single-product rounded shadow-sm white-bg">
-                                <img src="img/A9-copper.jpg" class="img-fluid p-4" alt="product" />
-                                <div class="product-info text-center pb-4 px-3">
-                                    <h4 class="mb-1">A9 Model- Luxury Black</h4>
-                                    <h5 class="product-price">
-                                        <span> ₹11,700.00</span>
-                                    </h5>
-                                    <a href="#" class="btn secondary-btn"> Book Now</a>
+                        @foreach (Product::get() as $product)
+                            <div class="col-md-4">
+                                <div class="single-product rounded shadow-sm white-bg">
+                                    <img src="{{ Voyager::image($product->image) }}" class="img-fluid p-4"
+                                        alt="product" />
+                                    <div class="product-info text-center pb-4 px-3">
+                                        <h4 class="mb-1">
+                                            {{ $product->product_name }}
+                                        </h4>
+                                        <h5 class="product-price">
+                                            <span> ₹{{ $product->price }}</span>
+                                        </h5>
+                                        <a href="{{ route('product') }}" class="btn secondary-btn">
+                                            Book Now</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-product rounded shadow-sm white-bg">
-                                <img src="img/A9-black-both-panel-image.jpg" class="img-fluid p-4" alt="product" />
-                                <div class="product-info text-center pb-4 px-3">
-                                    <h4 class="mb-1">A9 Model- Royal Copper</h4>
-                                    <h5 class="product-price">
-                                        <span> ₹11,700.00</span>
-                                    </h5>
-                                    <a href="#" class="btn secondary-btn"> Book Now</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
                 </div>
