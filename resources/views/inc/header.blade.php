@@ -27,7 +27,7 @@
                         <a class="nav-link page-scroll" href="{{ route('service') }}">Service Request</a>
                     </li>
                     <li class="nav-item">
-                        <a class="book-btn nav-link page-scroll" href="{{ route('product') }}">Book Now</a>
+                        <a class="book-btn nav-link page-scroll" href="{{ route('product') }}">Buy Now</a>
                     </li>
 
                 </ul>
