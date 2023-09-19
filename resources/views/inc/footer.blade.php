@@ -81,7 +81,7 @@
                                 <a href="{{ route('service') }}">Service Request</a>
                             </li>
                             <li class="mb-2">
-                                <a href="{{ route('product') }}">Book Now</a>
+                                <a href="{{ route('product') }}">Buy Now</a>
                             </li>
                         </ul>
                     </div>

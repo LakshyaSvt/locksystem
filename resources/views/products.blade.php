@@ -28,7 +28,7 @@
                                             <span> ₹{{ $product->price }}</span>
                                         </h5>
                                         <a href="{{ route('product') }}" class="btn secondary-btn">
-                                            Book Now</a>
+                                            Buy Now</a>
                                     </div>
                                 </div>
                             </div>

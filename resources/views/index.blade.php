@@ -380,7 +380,7 @@
                                 </h5>
 
                                 <a href="#" class="btn secondary-btn mt-3">
-                                    Book Now</a>
+                                    Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -414,7 +414,7 @@
                                             <span> ₹{{ $product->price }}</span>
                                         </h5>
                                         <a href="{{ route('product') }}" class="btn secondary-btn">
-                                            Book Now</a>
+                                            Buy Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -595,7 +595,7 @@
                                 <span>Zero</span> Risk
                             </h2>
                             <a href="{{ route('product') }}" class="btn secondary-btn mt-3">
-                                Book Now</a>
+                                Buy Now</a>
                         </div>
                     </div>
                 </div>
