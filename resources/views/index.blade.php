@@ -2,66 +2,7 @@
 @section('content')
     <!--body content wrap start-->
     <div class="main">
-         <section class="hero-section hero-section-3 ptb-100">
-        <!--animated circle shape start-->
-        <div class="circles">
-            <div class="point animated-point-1"></div>
-            <div class="point animated-point-2"></div>
-            <div class="point animated-point-3"></div>
-            <div class="point animated-point-4"></div>
-            <div class="point animated-point-5"></div>
-            <div class="point animated-point-6"></div>
-            <div class="point animated-point-7"></div>
-            <div class="point animated-point-8"></div>
-            <div class="point animated-point-9"></div>
-        </div>
-        <!--animated circle shape end-->
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-md-6 col-lg-6">
-                    <div class="hero-content-left pt-5">
-                        <h1>We sell <span>Best quality </span> <br> Product</h1>
-                        <p class="lead">Conveniently generate multifunctional markets and B2C vortals. Uniquely enable
-                            inexpensive materials rather than sticky products.</p>
-
-                        <!--core feature list start-->
-                        <ul class="list-inline py-4 core-feature-list d-flex">
-                            <li class="list-inline-item text-center">
-                                <div class="icon-box mb-2 mx-auto primary-bg">
-                                    <span class="ti-announcement text-white"></span>
-                                </div>
-                                App notifications
-                            </li>
-                            <li class="list-inline-item text-center">
-                                <div class="icon-box mb-2 mx-auto primary-bg">
-                                    <span class="ti-alarm-clock text-white"></span>
-                                </div>
-                                Alarms Clock
-                            </li>
-                            <li class="list-inline-item text-center">
-                                <div class="icon-box mb-2 mx-auto primary-bg">
-                                    <span class="ti-location-pin text-white"></span>
-                                </div>
-                                Location tracker
-                            </li>
-                        </ul>
-                        <!--core feature list end-->
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-5">
-                    <div class="hero-animation-img pt-lg-4">
-                        <img class="img-fluid d-block m-auto animation-one" src="img/model-run.png" alt="animation image">
-                        <img class="img-fluid d-none d-lg-block animation-three"
-                             src="img/product-img-1.png" alt="animation image" width="280">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--shape image start-->
-        <img src="img/hero-bg-shape-2.svg" class="shape-image" alt="shape image">
-        <!--shape image end-->
-    </section>
+        
         <!--hero section start-->
         <section class="hero-section ptb-100 background-img"
             style="
