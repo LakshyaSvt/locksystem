@@ -57,13 +57,13 @@
 <body>
 
     <!--header section start-->
-    @include('inc.header')
+    <!-- @include('inc.header') -->
     <!--header section start-->
 
     @yield('content')
 
     <!--footer section start-->
-    @include('inc.footer')
+    <!-- @include('inc.footer') -->
     <!--footer section end-->
 
     <!--jQuery-->
