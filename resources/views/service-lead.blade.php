@@ -6,6 +6,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="section-heading text-center mb-4">
+                        <a class="navbar-brand" href="/"><img src="img/logo_2.png" width="120" alt="logo"
+                                                           class="img-fluid"></a>
                         <h2>Service <span>Request</span> Form </h2>
 
                     </div>
