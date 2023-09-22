@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[IndexController::class, 'index'])->name('index');
-Route::view('/about','about')->name('about');
-Route::view('/products','products')->name('products');
+// Route::get('/index',[IndexController::class, 'index'])->name('index');
+// Route::view('/about','about')->name('about');
+// Route::view('/products','products')->name('products');
 
 Route::get('/product', [IndexController::class, 'product'])->name('product');
 Route::post('/purchase-lead', [IndexController::class, 'purchaseLeadEnquiry'])->name('purchase-lead-enquiry');
@@ -25,6 +25,6 @@ Route::post('/service-lead', [IndexController::class, 'serviceLeadEnquiry'])->na
 
 
 
-Route::group(['prefix' => 'panel'], function () {
+Route::group(['prefix' => '/'], function () {
     Voyager::routes();
 });
