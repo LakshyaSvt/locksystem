@@ -80,13 +80,13 @@
                                     <label for="invoice" class="form-label">Invoice *</label>
                                     <input type="file" name="invoice" class="form-control" id="invoice" required>
                                 </div>
-                                <div class="form-check">
+                                {{-- <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="1" id="temrs_condition">
                                     <label class="form-check-label" for="temrs_condition">
                                         I agree to pay installation charges where applicable.
                                     </label>
-                                </div>
-                                <button type="submit" id="submit-button" class="btn btn-primary" disabled>Submit</button>
+                                </div> --}}
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
             });
         });
     </script>
-    <script>
+    {{-- <script>
         $('#temrs_condition').on('change', function() {
             if ($(this).is(':checked')) {
                 $('#submit-button').removeAttr('disabled');
@@ -135,5 +135,5 @@
                 $('#submit-button').attr('disabled', 'disabled');
             }
         });
-    </script>
+    </script> --}}
 @endsection

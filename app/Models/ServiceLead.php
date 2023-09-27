@@ -16,7 +16,14 @@ class ServiceLead extends Model
             $user = Auth::user();
             //check if user has employee role
             if ($user->hasRole('employee')) {
-                return $query->where('city_id', $user->city_id);
+                $city_ids = [];
+
+                if(isset($user->cities) && count($user->cities) > 0){
+                    foreach($user->cities as $city){
+                        array_push($city_ids, $city->id);
+                    }
+                }
+                return $query->whereIn('city_id', $city_ids);
             }
         }
     }

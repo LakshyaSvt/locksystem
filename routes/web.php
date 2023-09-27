@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,9 @@ Route::post('/service-lead', [IndexController::class, 'serviceLeadEnquiry'])->na
 
 Route::group(['prefix' => '/'], function () {
     Voyager::routes();
+});
+
+Route::get('/test',function (){
+    $user = User::find(7);
+    return $user->cities;
 });
