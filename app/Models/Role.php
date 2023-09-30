@@ -12,7 +12,7 @@ class Role extends \TCG\Voyager\Models\Role
 
     public function scopeServicePartner($query)
     {
-        if(auth()->user()->role_id != 1)
-            return $query->whereName('employee');
+        // if(auth()->user()->role_id != 1)
+            return $query->where('roles.name','employee');
     }
 }
