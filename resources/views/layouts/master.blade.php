@@ -11,12 +11,12 @@
         content="Mars SmartLife At Mars our mission is to make every door safer and more secure by pioneering control, versatility, and access through our smart locks & smart products.">
 
     <meta property="og:site_name" content="Mars" />
-    <meta property="og:site" content="https://mdayurvediccollege.in/demo/lockweb" />
+    <meta property="og:site" content="{{ config('ap.url') }}/demo/lockweb" />
     <meta property="og:title" content="Mars SmartLife &#8211; Design For Convenience. Build For You" />
     <meta property="og:description"
         content="Mars SmartLife At Mars our mission is to make every door safer and more secure by pioneering control, versatility, and access through our smart locks & smart products." />
-    <meta property="og:image" content="https://mdayurvediccollege.in/demo/lockweb/img/logo_2.png" />
-    <meta property="og:url" content="https://mdayurvediccollege.in/demo/lockweb" />
+    <meta property="og:image" content="{{ config('ap.url') }}/demo/lockweb/img/logo_2.png" />
+    <meta property="og:url" content="{{ config('ap.url') }}/demo/lockweb" />
     <meta property="og:type" content="website" />
 
     <!--title-->
@@ -57,13 +57,13 @@
 <body>
 
     <!--header section start-->
-     
+
     <!--header section start-->
 
     @yield('content')
 
     <!--footer section start-->
-    
+
     <!--footer section end-->
 
     <!--jQuery-->
