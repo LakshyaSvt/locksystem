@@ -10,7 +10,7 @@ class Role extends \TCG\Voyager\Models\Role
 {
     use HasFactory;
 
-    public function scopeServicePartner($query)
+    public function scopePartner($query)
     {
         // if(auth()->user()->role_id != 1)
             return $query->where('roles.name','employee');
